@@ -1,0 +1,30 @@
+<body>
+  <%- include('partials/header') %>
+  <div class="container main-content mt-5">
+      <h1 class="mb-4">All Blog Posts</h1>
+      <div class="row">
+        <% posts.forEach(post => { %>
+          <div class="col-md-4 mb-4">
+            <div class="card h-100">
+              <div class="card-body">
+                <h5 class="card-title"><%= post.title %></h5>
+                <form action="/view" method="POST" class="d-inline">
+                  <input type="hidden" name="id" value="<%= post.id %>">
+                  <button type="submit" class="btn btn-primary">Read More</button>
+                </form>
+                <form action="/edit" method="POST" class="d-inline">
+                  <input type="hidden" name="id" value="<%= post.id %>">
+                  <button type="submit" class="btn btn-warning">Edit</button>
+                </form>
+                <form action="/delete" method="POST" class="d-inline">
+                  <input type="hidden" name="id" value="<%= post.id %>">
+                  <button type="submit" class="btn btn-danger">Delete</button>
+                </form>
+              </div>
+            </div>
+          </div>
+        <% }); %>
+      </div>
+  </div>
+  <%- include('partials/footer') %>
+</body>
