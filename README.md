@@ -34,8 +34,14 @@ This is a simple and responsive Blog Post Web App built using **Node.js**, **Exp
 
 ## Database Setup
 1. Ensure **PostgreSQL** is installed and running.
-2. Create a database named `blogDB`.
-3. Update your database connection details in the project.
+2. Create a database named `Post`.
+3. Run this query to create tables
+   CREATE TABLE posts (
+  id SERIAL PRIMARY KEY,
+  title TEXT NOT NULL,
+  content TEXT NOT NULL
+);
+
 
 ## Running the Project
 1. Start the development server:
