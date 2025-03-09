@@ -1,90 +1,84 @@
 # Blog Post Web App
 
 ## Overview
-This is a simple and responsive Blog Post Web App built using **Node.js**, **Express.js**, **EJS**, and **PostgreSQL**. It allows users to create, view, edit, and delete blog posts. The project is designed to help users manage their blog content efficiently.
+This is a simple **Blog Post Web App** built using **Node.js**, **Express.js**, **PostgreSQL**, and **EJS**. It allows users to create, view, edit, and delete blog posts. The application follows a secure structure with environment variables for database credentials.
 
 ## Features
-✅ Create new blog posts with ease
-✅ View all blog posts on the homepage
-✅ Read individual blog posts in detail
-✅ Edit existing blog posts
-✅ Delete posts when no longer needed
-✅ Responsive design using **Bootstrap**
+✅ Create new blog posts
+✅ View detailed content of posts
+✅ Edit existing posts
+✅ Delete posts securely
+✅ Database integration using **PostgreSQL**
+
+---
+
+## Installation
+
+### Step 1: Clone the Repository
+```bash
+git clone https://github.com/MrinalManu1/Blog_Post_Web_App.git
+cd Blog_Post_Web_App
+```
+
+### Step 2: Install Dependencies
+```bash
+npm install
+```
+
+### Step 3: Set Up the Database
+1. Create a PostgreSQL database (e.g., `Post`).
+2. Inside your database, create a table using the following SQL command:
+```sql
+CREATE TABLE posts (
+    id SERIAL PRIMARY KEY,
+    title TEXT NOT NULL,
+    content TEXT NOT NULL
+);
+```
+
+### Step 4: Create `.env` File
+Create a `.env` file in the root of your project with the following content:
+```DATABASE_URL=postgres://your_username:your_password@your_host:your_port/your_database
+PORT=3000
+```
+
+
+### Step 5: Start the Server
+```bash
+npm start
+```
+
+The app will be available at: **[http://localhost:3000](http://localhost:3000)**
+
+---
+
+## Usage
+- Visit the homepage to see all blog posts.
+- Click **"Create New Post"** to add a new post.
+- Use **"Read More"** to view full content.
+- Use **"Edit"** or **"Delete"** buttons to modify or remove posts.
+
+---
+
+
 
 ## Technologies Used
 - **Node.js**
 - **Express.js**
-- **EJS**
 - **PostgreSQL**
-- **Bootstrap**
+- **EJS**
+- **Bootstrap** (for styling)
 
-## Installation
-1. **Clone the repository**
-   ```sh
-   git clone https://github.com/MrinalManu1/Blog_Post_Web_App.git
-   ```
-2. **Navigate to the project folder**
-   ```sh
-   cd Blog_Post_Web_App
-   ```
-3. **Install dependencies**
-   ```sh
-   npm install
-   ```
-
-## Database Setup
-1. Ensure **PostgreSQL** is installed and running.
-2. Create a database named `Post`.
-3. Run this query to create tables
-   CREATE TABLE posts (
-  id SERIAL PRIMARY KEY,
-  title TEXT NOT NULL,
-  content TEXT NOT NULL
-);
-
-
-## Running the Project
-1. Start the development server:
-   ```sh
-   npm start
-   ```
-2. Open [http://localhost:3000](http://localhost:3000) in your browser.
-
-## Fixing OpenSSL Issue (For Node.js 22+)
-If you encounter the `ERR_OSSL_EVP_UNSUPPORTED` error:
-
-1. Run the following command to enable the legacy provider:
-   ```sh
-   node --openssl-legacy-provider index.js
-   ```
-
-2. Alternatively, modify your `crypto` import to ensure compatibility:
-   ```js
-   const crypto = require('crypto');
-   const hash = crypto.createHash('md5', { opensslLegacyProvider: true });
-   hash.update('myData');
-   console.log(hash.digest('hex'));
-   ```
-
-## Folder Structure
-```
-├── public
-│   ├── css
-│   └── js
-├── views
-│   ├── home.ejs
-│   ├── create.ejs
-│   ├── edit.ejs
-│   ├── header.ejs
-│   ├── footer.ejs
-├── index.js
-├── package.json
-├── .gitignore
-├── README.md
-```
+---
 
 ## Contributing
-Contributions are welcome! If you'd like to improve the project, feel free to fork the repository and submit a pull request.
+Feel free to fork the repository and submit pull requests for enhancements, bug fixes, or new features.
 
+---
+
+## License
+This project is licensed under the **MIT License**.
+
+---
 
 
