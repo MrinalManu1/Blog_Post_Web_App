@@ -38,7 +38,7 @@ CREATE TABLE posts (
 
 ### Step 4: Create `.env` File
 Create a `.env` file in the root of your project with the following content:
-```DATABASE_URL=postgres://your_username:your_password@your_host:your_port/your_database
+DATABASE_URL=postgres://your_username:your_password@your_host:your_port/your_database
 PORT=3000
 ```
 
