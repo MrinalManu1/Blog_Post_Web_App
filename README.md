@@ -45,7 +45,7 @@ PORT=3000
 
 ### Step 5: Start the Server
 ```bash
-npm start
+node index.js
 ```
 
 The app will be available at: **[http://localhost:3000](http://localhost:3000)**
